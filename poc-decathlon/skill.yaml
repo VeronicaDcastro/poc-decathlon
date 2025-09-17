@@ -1,0 +1,27 @@
+name: search_issues
+description: Busca issues no Jira com base em uma palavra-chave
+parameters:
+  - name: query
+    type: string
+    required: true
+credentials:
+  - name: base_url
+    type: team
+  - name: username
+    type: member
+  - name: api_token
+    type: member
+output:
+  type: object
+  properties:
+    results:
+      type: array
+      items:
+        type: object
+        properties:
+          key:
+            type: string
+          summary:
+            type: string
+          url:
+            type: string
